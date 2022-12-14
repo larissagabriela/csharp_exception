@@ -11,6 +11,8 @@ namespace csharp_exception.Contas
     {
         public static int TotalDeContasCriadas { get; private set; }
 
+        public static float TaxaOperacao { get; private set; }
+
         private int numero_agencia;
         public int Numero_agencia
         {
@@ -84,6 +86,15 @@ namespace csharp_exception.Contas
         {
             Numero_agencia = numero_agencia;
             Conta = numero_conta;
+            try
+            {
+                TaxaOperacao = 30 / TotalDeContasCriadas;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Ocorreu um erro! Não é possível fazer uma divisão por zero!");
+            }          
+
             TotalDeContasCriadas++;
         }
 
