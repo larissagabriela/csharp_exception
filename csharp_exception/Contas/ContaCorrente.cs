@@ -89,7 +89,7 @@ namespace csharp_exception.Contas
 
             if (numero_agencia <= 0)
             {
-                throw new ArgumentException("Número de agência menor ou igual a zero!", nameof(numero_agencia));
+                throw new ArgumentException("Número de agência menor ou igual a zero!");
             }
 
             /*
